@@ -1,8 +1,2 @@
 # maths
-A package for accurately computing running (online) mean, variance, and standard deviation
-
-`go get github.com/carbocation/maths`
-
-To test (100% coverage)
-
-`go test -cover`
+一个计算平均值、方差、标准差、布林线上轨、布林线下轨的golang库。
