@@ -3,7 +3,7 @@ maths computes accurate running mean, variance, and standard deviation
 
 It is based on code by John D Cook: http://www.johndcook.com/blog/standard_deviation/
 */
-package main
+package maths
 
 import (
 	"math"
@@ -11,7 +11,7 @@ import (
 
 type RunningStat struct {
 	// 元素个数
-	N    uint
+	N uint
 	//最新的平均值
 	NewM float64
 	// 上一个平均值
@@ -42,14 +42,17 @@ func (r *RunningStat) Push(x float64) {
 		r.OldS = r.NewS
 	}
 }
+
 // 样本数量
 func (r *RunningStat) NumDataValues() uint {
 	return r.N
 }
+
 // 均值
 func (r *RunningStat) Mean() float64 {
 	return r.NewM
 }
+
 //方差
 func (r *RunningStat) Variance() float64 {
 	if r.N > 1 {
@@ -58,6 +61,7 @@ func (r *RunningStat) Variance() float64 {
 
 	return 0.0
 }
+
 // 标准偏差
 func (r *RunningStat) StandardDeviation() float64 {
 	return math.Sqrt(r.Variance())
