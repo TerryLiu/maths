@@ -1,4 +1,4 @@
-package runningvariance
+package main
 
 import "testing"
 
@@ -32,11 +32,11 @@ func TestStandardDeviation(t *testing.T) {
 	}
 }
 
-func TestNumDataValues(t *testing.T) {
-	s := NewRunningStat()
-	s.Push(1)
-
-	if actual, expected := s.NumDataValues(), uint(1); expected != actual {
-		t.Errorf("Expected %f, got %f", expected, actual)
-	}
-}
+// func TestNumDataValues(t *testing.T) {
+// 	s := NewRunningStat()
+// 	s.Push(1)
+//
+// 	if actual, expected := s.NumDataValues(), uint(1); expected != actual {
+// 		t.Errorf("Expected %f, got %f", expected, actual)
+// 	}
+// }
